@@ -110,7 +110,7 @@ class App extends Component {
       <div className="App">
         <h1 className="Header">React Wars</h1>
         <div className='list-container'>{starwarsChars.map(char =>
-          <ul className='list'>
+          <ul className='list' key={char.name}>
             <li className='name'><h1>{char.name}</h1></li>
             <li>Birth Day: {char.birth_year}</li>
             <li>Gender: {char.gender}</li>
