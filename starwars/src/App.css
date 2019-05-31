@@ -6,3 +6,32 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+.list-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.list{
+  padding: 50px;
+  background-color: rgb(219, 179, 68);
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 2px 2px #ecdf6a;
+  
+}
+
+.name{
+  list-style: none;
+  padding: 10px;
+}
+
+li > h1{
+  font-size: 20px;
+}
+
+li {
+  padding: 2px;
+  list-style-image:url('https://i.postimg.cc/W1Q71yX0/light.png')
+}
