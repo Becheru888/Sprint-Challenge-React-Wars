@@ -113,7 +113,6 @@ class App extends Component {
             <li>Hair Color: {char.hair_color}</li>
             <li>Created: {char.created}</li>
             <li>Edited: {char.edited}</li>
-            <li>Films:  </li>
           </ul>
         )}</div>
       </div>
