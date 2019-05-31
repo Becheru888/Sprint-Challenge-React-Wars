@@ -6,21 +6,26 @@ class App extends Component {
     super();
     this.state = {
       starwarsChars: [],
-      // films: [],
-      // homeworld:[],
-      // species:[],
-      // starships:[],
-      // vehicles:[],
+
+      // Stretch challenge 
+
+      films: [],
+      homeworld:[],
+      species:[],
+      starships:[],
+      vehicles:[],
     };
 
   }
 
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
+
+    // Stretch challenge 
     this.getFilms('https://swapi.co/api/films/')
-    // this.getHomeWorld('https://swapi.co/api/planets/')
-    // this.getSpecies('https://swapi.co/api/species/')
-    // this.getStarShips('https://swapi.co/api/starships/')
+    this.getHomeWorld('https://swapi.co/api/planets/')
+    this.getSpecies('https://swapi.co/api/species/')
+    this.getStarShips('https://swapi.co/api/starships/')
   }
 
   getCharacters = URL => {
@@ -39,6 +44,8 @@ class App extends Component {
       });
   };
 
+// Stretch challenge
+
   getFilms = URL => {
     fetch(URL)
       .then(res => {
@@ -52,52 +59,53 @@ class App extends Component {
       });
   }
 
-  // getHomeWorld = URL => {
-  //   fetch(URL)
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       this.setState({ homeworld: data.results })
-  //     })
-  //     .catch(err => {
-  //       throw new Error(err);
-  //     });
-  // }
+  getHomeWorld = URL => {
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ homeworld: data.results })
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  }
 
-  // getSpecies = URL => {
-  //   fetch(URL)
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       this.setState({ species: data.results })
-  //     })
-  //     .catch(err => {
-  //       throw new Error(err);
-  //     });
-  // }
+  getSpecies = URL => {
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ species: data.results })
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  }
 
-  // getStarShips = URL => {
-  //   fetch(URL)
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       this.setState({ starships: data.results })
-  //     })
-  //     .catch(err => {
-  //       throw new Error(err);
-  //     });
-  // }
+  getStarShips = URL => {
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ starships: data.results })
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  }
 
 
   render() {
     
-    const {starwarsChars} = this.state;
-    const {films} = this.state
+    const {starwarsChars, films, homeworld, species, starships} = this.state;
+    
+    // Stretch Challange
+    console.log(starwarsChars, films, homeworld, species, starships)
 
-    console.log(starwarsChars, films)
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
